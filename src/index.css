@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #141414;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-netflix-red hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-500 text-white font-semibold py-2 px-6 rounded transition-all duration-200;
+  }
+  
+  .movie-card {
+    @apply relative group cursor-pointer transform transition-all duration-300 hover:scale-105 hover:z-10;
+  }
+  
+  .movie-card-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100;
+  }
+  
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 animate-fade-in;
+  }
+  
+  .modal-content {
+    @apply bg-netflix-gray rounded-lg p-6 max-w-md w-full mx-4 animate-scale-in;
+  }
+  
+  .input-field {
+    @apply w-full p-3 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-netflix-red transition-colors;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
